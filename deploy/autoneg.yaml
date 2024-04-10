@@ -251,9 +251,10 @@ spec:
         - --metrics-bind-address=127.0.0.1:8080
         - --leader-elect
         - --zap-encoder=json
+        - --always-reconcile=true
         command:
         - /manager
-        image: ghcr.io/googlecloudplatform/gke-autoneg-controller/gke-autoneg-controller:v1.1.0
+        image: ghcr.io/googlecloudplatform/gke-autoneg-controller/gke-autoneg-controller:latest
         livenessProbe:
           httpGet:
             path: /healthz
